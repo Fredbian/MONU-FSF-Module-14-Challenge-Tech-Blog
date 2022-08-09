@@ -47,6 +47,30 @@ WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
 
+## Installation
+* Install App
+```
+npm i
+```
+
+* Add a .env file to the root folder with the following details
+```
+DB_NAME='ecommerce_db'
+DB_USER='root'
+DB_PW='xxxxxxxx'
+```
+
+* Load seeds
+```
+npm run seed
+```
+
+* Start App
+```
+npm start
+```
+
+
 ## Screenshots
 * 
 * 
