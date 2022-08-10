@@ -32,7 +32,7 @@ User.init({
         }
     }
 }, {
-    // set up hooks (lifecycle events)
+    // set up hooks (lifecycle events) to hash the password before the object is created in the database
     hooks: {
         beforeCreate: async (newUserData) => {
             newUserData.password = await bcrypt.hash(newUserData.password, 10)

@@ -1,6 +1,4 @@
 // import moduels
-const sequelize = require('../config/connection')
-const bcrypt = require('bcrypt')
 const { User } = require('../models')
 
 // prepare data

@@ -15,10 +15,11 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const app = express()
 const PORT = process.env.PORT || 3001
 
-// create sequelize store
+// create sessions
 const sess = {
+    // key to sign the cookie
     secret: 'SECRET',
-    cookie: {},
+    cookie: { expires: 3600000 },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({

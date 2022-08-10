@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection')
 
 // set up Blog model
-class Blog extends Model { }
+class Blog extends Model {}
 
 Blog.init(
     {
@@ -33,15 +33,11 @@ Blog.init(
         createdAt: {
             type: DataTypes.DATE,
             allowNull: false
-        },
-        updatedAt: {
-            type: DataTypes.DATE,
-            allowNull: false
-        }
+        }        
     },
     {
         sequelize,
-        timestamps: true,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'blog'

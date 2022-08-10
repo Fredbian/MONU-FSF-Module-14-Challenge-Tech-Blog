@@ -1,5 +1,4 @@
 // import moduels
-const sequelize = require('../config/connection')
 const { Blog } = require('../models')
 
 // prepare data
