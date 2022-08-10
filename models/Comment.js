@@ -30,7 +30,7 @@ Comment.init(
                 key: 'id'
             }
         },
-        body: {
+        comment_body: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
