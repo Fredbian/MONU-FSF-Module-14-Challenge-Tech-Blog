@@ -10,9 +10,8 @@ class User extends Model {
     }
 }
 
-// create User columns
 User.init({
-    // define columns
+    // define columns on User model
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
