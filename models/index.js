@@ -3,6 +3,9 @@ const User = require('./User')
 const Blog = require('./Blog')
 const Comment = require('./Comment')
 
+// create relations between modules
+// create foreign key for each one
+// set cascade if foreign key not allow null
 User.hasMany(Blog, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
