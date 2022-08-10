@@ -1,3 +1,4 @@
+// import modules
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection')
 const bcrypt = require('bcrypt')
@@ -49,4 +50,5 @@ User.init({
     modelName: 'user'
 })
 
+// export module
 module.exports = User

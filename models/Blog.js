@@ -1,6 +1,6 @@
+// import modules
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection')
-const User = require('./User')
 
 // set up Blog model
 class Blog extends Model { }
@@ -18,8 +18,8 @@ Blog.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                key: 'id',
-                model: User
+                model: 'user',
+                key: 'id'
             }
         },
         title: {
@@ -31,12 +31,12 @@ Blog.init(
             allowNull: false
         },
         createdAt: {
-            field: 'created_at',
-            type: DataTypes.DATE
+            type: DataTypes.DATE,
+            allowNull: false
         },
         updatedAt: {
-            field: 'updated_at',
-            type: DataTypes.DATE
+            type: DataTypes.DATE,
+            allowNull: false
         }
     },
     {
@@ -48,4 +48,5 @@ Blog.init(
     }
 )
 
+// export module
 module.exports = Blog
