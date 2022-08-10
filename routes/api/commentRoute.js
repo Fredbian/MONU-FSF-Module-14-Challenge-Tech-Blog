@@ -6,11 +6,11 @@ const withAuth = require('../../utils/auth')
 // Get all comments
 router.get('/', (req, res) => {
     Comment.findAll()
-    .then(commentData => res.status(200).json(commentData))
-    .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    })
+        .then(commentData => res.status(200).json(commentData))
+        .catch(err => {
+            console.log(err)
+            res.status(500).json(err)
+        })
 })
 
 // Create a new comment
@@ -22,11 +22,11 @@ router.post('/', withAuth, (req, res) => {
             blog_id: req.body.blog_id,
             user_id: req.body.user_id
         })
-        .then(commentData => res.status(200).json(commentData))
-        .catch(err => {
-            console.log(err)
-            res.status(500).json(err)
-        })
+            .then(commentData => res.status(200).json(commentData))
+            .catch(err => {
+                console.log(err)
+                res.status(500).json(err)
+            })
     }
 })
 
@@ -37,16 +37,16 @@ router.delete('/:id', withAuth, (req, res) => {
             id: req.params.id
         }
     })
-    .then(commentData => {
-        if (!commentData) {
-            return res.status(404).json({message: 'Cannot found comment by this id!'})
-        }
-        res.status(200).json(commentData)
-    })
-    .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    })
+        .then(commentData => {
+            if (!commentData) {
+                return res.status(404).json({ message: 'Cannot found comment by this id!' })
+            }
+            res.status(200).json(commentData)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json(err)
+        })
 })
 
 module.exports = router

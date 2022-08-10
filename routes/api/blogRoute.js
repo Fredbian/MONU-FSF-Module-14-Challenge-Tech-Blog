@@ -114,16 +114,16 @@ router.delete('/:id', withAuth, (req, res) => {
     Blog.destroy({
         where: { id: req.params.id }
     })
-    .then(blogData => {
-        if (!blogData) {
-            return res.status(404).json({message: 'Cannot found blog by this id!'})
-        }
-        res.status(200).json(blogData)
-    })
-    .catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-    })
+        .then(blogData => {
+            if (!blogData) {
+                return res.status(404).json({ message: 'Cannot found blog by this id!' })
+            }
+            res.status(200).json(blogData)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json(err)
+        })
 })
 
 module.exports = router
