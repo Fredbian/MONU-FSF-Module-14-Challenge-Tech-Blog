@@ -41,8 +41,8 @@ router.get('/:id', (req, res) => {
         where: { id: req.params.id },
         attributes: [
             'id',
-            'blog_body',
             'title',
+            'blog_body',
             'create_at'
         ],
         include: [
@@ -52,7 +52,7 @@ router.get('/:id', (req, res) => {
             },
             {
                 model: Comment,
-                attributes: ['id', 'blog_id', 'user_id', 'comment_body','created_at'],
+                attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -93,9 +93,14 @@ router.post('/', withAuth, (req, res) => {
 
 // Update a blog
 router.put('/:id', withAuth, (req, res) => {
-    Blog.update(req.body, {
-        where: { id: req.params.id }
-    })
+    Blog.update(
+        {
+            title: req.body.title,
+            blog_body: req.body.blog_body
+        },
+        {
+            where: { id: req.params.id }
+        })
         .then(blogData => {
             if (!blogData) {
                 return res.status(404).json({ message: 'Cannot found blog by this id!' })

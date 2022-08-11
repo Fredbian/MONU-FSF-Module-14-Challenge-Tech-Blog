@@ -2,6 +2,7 @@
 const router = require('express').Router()
 const { User, Blog, Comment } = require('../models')
 
+
 // rander home page
 router.get('/', (req, res) => {
     Blog.findAll({
@@ -88,6 +89,8 @@ router.get('/blog/:id', (req, res) => {
             res.status(500).json(err)
         })
 })
+
+
 
 // login page
 router.get('/login', (req, res) => {

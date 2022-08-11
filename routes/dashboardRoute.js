@@ -14,6 +14,7 @@ router.get('/', withAuth, (req, res) => {
             'blog_body',
             'create_at'
         ],
+        order: [['created_at', 'DESC']],
         include: [
             {
                 model: Comment,
@@ -78,6 +79,11 @@ router.get('/edit/:id', withAuth, (req, res) => {
             console.log(err)
             res.status(500).json(err)
         })
+})
+
+// new blog
+router.get('/new', (req, res) => {
+    res.render('new-blog')   
 })
 
 module.exports = router
