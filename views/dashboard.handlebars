@@ -1,0 +1,21 @@
+{{#if blogs.length}}
+<section>
+  <h2>Your Blogs</h2>
+  <ul class="blog-list">
+    {{#each blogs as |blog|}}
+    <li>
+      {{> dashboard-blog-info blog}}
+      <a href="/dashboard/edit/{{blog.id}}" class="edit-link">Edit Blog</a>      
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{else}}
+<section>
+  <h3>You have no blogs yet!</h3>
+</section>
+{{/if}}
+
+<button type="submit"><a href="/dashboard/new">New Blog</a></button>
+
+<script src="../public/js/dashboard.js"></script>

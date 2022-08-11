@@ -102,7 +102,7 @@ router.put('/:id', withAuth, (req, res) => {
             where: { id: req.params.id }
         })
         .then(blogData => {
-            if (!blogData) {
+            if (!blogData[0]) {
                 return res.status(404).json({ message: 'Cannot found blog by this id!' })
             }
             res.status(200).json(blogData)

@@ -65,7 +65,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     })
         .then(blogData => {
             // if not found, show message
-            if (!blogData) {
+            if (!blogData[0]) {
                 return res.status(404).json({ message: 'Cannot found blog by this id!' })
             }
             // else return edit blog page
