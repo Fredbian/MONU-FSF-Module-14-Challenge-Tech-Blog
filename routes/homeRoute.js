@@ -1,7 +1,6 @@
 // import modules
 const router = require('express').Router()
 const { User, Blog, Comment } = require('../models')
-const withAuth = require('../utils/auth')
 
 // rander home page
 router.get('/', (req, res) => {
@@ -73,6 +72,7 @@ router.get('/blog/:id', (req, res) => {
         ]
     })
         .then(blogData => {
+            // if not found, return message
             if (!blogData) {
                 return res.status(404).json({ message: 'Cannot found blog by this id!' })
             }
