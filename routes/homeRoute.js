@@ -90,13 +90,23 @@ router.get('/blog/:id', (req, res) => {
 })
 
 // login page
-
-
-
+router.get('/login', (req, res) => {
+    // if login success, redirect to home page
+    if (req.session.loggedIn) {
+       return res.redirect('/')
+    }
+    res.render('login')
+})
 
 
 // sign up page
-
+router.get('/signup', (req, res) => {
+    // after sign up, redirect to home page 
+    if (req.session.loggedIn) {
+        return res.redirect('/')
+    }
+    res.render('signup')
+})
 
 
 module.exports = router
