@@ -30,14 +30,11 @@ Blog.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
-        createdAt: {
-            type: DataTypes.DATE,
-            allowNull: false
-        }        
+      
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'blog'

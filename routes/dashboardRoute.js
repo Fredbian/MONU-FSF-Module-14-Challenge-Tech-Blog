@@ -1,5 +1,6 @@
 // import modules
 const router = require('express').Router()
+const sequelize = require('../config/connection')
 const { User, Blog, Comment } = require('../models')
 const withAuth = require('../utils/auth')
 
@@ -8,17 +9,17 @@ router.get('/', withAuth, (req, res) => {
     // all blogs
     Blog.findAll({
         where: { user_id: req.session.user_id },
-        attributes: [
-            'id',
-            'title',
-            'blog_body',
-            'create_at'
-        ],
+        // attributes: [
+        //     'id',
+        //     'title',
+        //     'blog_body',
+        //     'create_at'
+        // ],
         order: [['created_at', 'DESC']],
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
+                // attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -47,7 +48,7 @@ router.get('/', withAuth, (req, res) => {
 router.get('/edit/:id', withAuth, (req, res) => {
     Blog.findOne({
         where: { id: req.params.id },
-        attributes: ['id', 'title', 'blog_body', 'created_at'],
+        // attributes: ['id', 'title', 'blog_body', 'created_at'],
         include: [
             {
                 model: User,
@@ -55,7 +56,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             },
             {
                 model: Comment,
-                attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
+                // attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -83,7 +84,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
 
 // new blog
 router.get('/new', (req, res) => {
-    res.render('new-blog')   
+    res.render('add-blog')   
 })
 
 module.exports = router

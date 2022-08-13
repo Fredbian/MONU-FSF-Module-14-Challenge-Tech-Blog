@@ -14,8 +14,11 @@ const userData = [
 ]
 
 // bulk create data
-const userSeed = () => {
-  User.bulkCreate(userData)
+const userSeed = async () => {
+  
+  await User.bulkCreate(userData, {
+    individualHooks: true, // to trigger before save hook
+  });
 }
 
 // export moduels

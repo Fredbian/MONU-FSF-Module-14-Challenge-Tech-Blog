@@ -17,7 +17,7 @@ const commentData = [
 
 // bulk create data
 const commentSeed = () => {
-	Comment.bulkCreate(commentData)
+	return Comment.bulkCreate(commentData)
 }
 
 // export moduels

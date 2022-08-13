@@ -1,5 +1,6 @@
 // import modules
 const router = require('express').Router()
+const sequelize = require('../config/connection')
 const { User, Blog, Comment } = require('../models')
 
 
@@ -7,12 +8,12 @@ const { User, Blog, Comment } = require('../models')
 router.get('/', (req, res) => {
     Blog.findAll({
         // GET id, title, body and timstamp from blog table
-        attributes: [
-            'id',
-            'title',
-            'blog_body',
-            'created_at'
-        ],
+        // attributes: [
+        //     'id',
+        //     'title',
+        //     'blog_body',
+        //     'created_at'
+        // ],
         // ORDER BY desc
         order: [
             ['created_at', 'DESC']
@@ -24,7 +25,7 @@ router.get('/', (req, res) => {
             },
             {
                 model: Comment,
-                attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
+                // attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -64,7 +65,7 @@ router.get('/blog/:id', (req, res) => {
             },
             {
                 model: Comment,
-                attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
+                // attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -79,7 +80,7 @@ router.get('/blog/:id', (req, res) => {
             }
 
             const blog = blogData.get({ plain: true })
-            res.render('single-blog', {
+            res.render('one-blog', {
                 blog,
                 loggedIn: req.session.loggedIn
             })

@@ -17,7 +17,7 @@ const blogData = [
 
 // bulk create data
 const blogSeed = () => {
-  Blog.bulkCreate(blogData)
+  return Blog.bulkCreate(blogData)
 }
 
 // export moduels

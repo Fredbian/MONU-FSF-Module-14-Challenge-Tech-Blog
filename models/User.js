@@ -34,13 +34,16 @@ User.init({
 }, {
     // set up hooks (lifecycle events) to hash the password before the object is created in the database
     hooks: {
-        beforeCreate: async (newUserData) => {
-            newUserData.password = await bcrypt.hash(newUserData.password, 10)
-            return newUserData
+        async beforeSave(userData){
+            console.log('current user data', this);
+            if(this.password !== userData.password){
+                userData.password = await bcrypt.hash(userData.password, 10)
+            }
+            return userData
         }      
-    },
+    }, 
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'user'
