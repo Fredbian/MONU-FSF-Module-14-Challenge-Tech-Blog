@@ -4,7 +4,7 @@
   <ul class="blog-list">
     {{#each blogs as |blog|}}
     <li>
-      {{> dashboard-blog-info blog}}
+      {{> blog-info blog}}
       <a href="/dashboard/edit/{{blog.id}}" class="edit-link">Edit Blog</a>      
     </li>
     {{/each}}

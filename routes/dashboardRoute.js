@@ -9,17 +9,10 @@ router.get('/', withAuth, (req, res) => {
     // all blogs
     Blog.findAll({
         where: { user_id: req.session.user_id },
-        // attributes: [
-        //     'id',
-        //     'title',
-        //     'blog_body',
-        //     'create_at'
-        // ],
         order: [['created_at', 'DESC']],
         include: [
             {
                 model: Comment,
-                // attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -46,27 +39,27 @@ router.get('/', withAuth, (req, res) => {
 
 // When click on a blog, edit blog
 router.get('/edit/:id', withAuth, (req, res) => {
-    Blog.findOne({
-        where: { id: req.params.id },
-        // attributes: ['id', 'title', 'blog_body', 'created_at'],
-        include: [
-            {
-                model: User,
-                attributes: ['username']
-            },
-            {
-                model: Comment,
-                // attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
-                include: {
+    Blog.findByPk(
+        req.params.id,
+        {
+            include: [
+                {
                     model: User,
                     attributes: ['username']
+                },
+                {
+                    model: Comment,
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
                 }
-            }
-        ]
-    })
+            ]
+        }
+    )
         .then(blogData => {
             // if not found, show message
-            if (!blogData[0]) {
+            if (!blogData) {
                 return res.status(404).json({ message: 'Cannot found blog by this id!' })
             }
             // else return edit blog page

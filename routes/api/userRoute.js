@@ -28,11 +28,9 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Blog,
-                // attributes: ['id', 'title', 'blog_body', 'created_at']
             },
             {
                 model: Comment,
-                // attributes: ['id', 'comment_body', 'created_at'],
                 include: {
                     model: Blog,
                     attributes: ['title']
@@ -122,8 +120,9 @@ router.post('/logout', (req, res) => {
         req.session.destroy(() => {
             res.status(204).end()
         })
-    }
-    res.status(404).end()
+    } else {
+        res.status(404).end()
+    }        
 })
 
 module.exports = router

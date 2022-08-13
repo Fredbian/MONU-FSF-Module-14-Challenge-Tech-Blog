@@ -8,12 +8,6 @@ const { User, Blog, Comment } = require('../models')
 router.get('/', (req, res) => {
     Blog.findAll({
         // GET id, title, body and timstamp from blog table
-        // attributes: [
-        //     'id',
-        //     'title',
-        //     'blog_body',
-        //     'created_at'
-        // ],
         // ORDER BY desc
         order: [
             ['created_at', 'DESC']
@@ -25,7 +19,6 @@ router.get('/', (req, res) => {
             },
             {
                 model: Comment,
-                // attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -52,12 +45,6 @@ router.get('/', (req, res) => {
 router.get('/blog/:id', (req, res) => {
     Blog.findOne({
         where: { id: req.params.id },
-        attributes: [
-            'id',
-            'title',
-            'blog_body',
-            'created_at'
-        ],
         include: [
             {
                 model: User,
@@ -65,7 +52,6 @@ router.get('/blog/:id', (req, res) => {
             },
             {
                 model: Comment,
-                // attributes: ['id', 'blog_id', 'user_id', 'comment_body', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
