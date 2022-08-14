@@ -11,6 +11,9 @@ body {
     background-color: rgb(138, 170, 138);
 }
 
+a:hover {
+    color: aliceblue;
+}
 
 header {
     padding: 10px;
@@ -46,6 +49,10 @@ header {
     font-family: sans-serif;
     background-color: rgb(58, 37, 7);
     color: rgb(138, 170, 138);
+}
+
+.btn-logout:hover {
+    color: aliceblue;
 }
 
 button:hover {
@@ -85,10 +92,6 @@ ul {
 .blog-title {
     background-color: rgb(58, 37, 7);
     padding: 5px;
-}
-
-.add-new-btn {
-    margin-left: 500px;
 }
 
 a {
