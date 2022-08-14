@@ -1,16 +1,16 @@
 <section class="edit-blog">
     <h2 class="form-header">Edit Blog</h2>
         <form class="edit-blog-form" id="edit-blog-form">
-            <div class="blog-title">
-                <label for="blog-title">Title</label>
-                <input type="text" name="blog-title" id="blog-title" value="{{blog.title}}" />
+            <div class="edit-blog-title">
+                <label for="blog-title">Title: </label>
+                <input class="enter-field" type="text" name="blog-title" id="blog-title" value="{{blog.title}}" />
             </div>
-            <div class="blog-body">
-                <label for="blog-body">Content</label>
-                <textarea id="blog-body" name="blog-body">{{blog.body}}</textarea>
+            <div class="edit-blog-body">
+                <label for="blog-body">Content: </label>
+                <textarea class="enter-field" id="blog-body" name="blog-body">{{blog.body}}</textarea>
             </div>
-            <button type="submit" class="update-btn" id="update-btn">Update Blog</button>
-            <button type="button" class="delete-btn" id="delete-btn">Delete Blog</button>
+            <button type="submit" class="update-btn btn" id="update-btn">Update Blog</button>
+            <button type="button" class="delete-btn btn" id="delete-btn">Delete Blog</button>
         </form>
 </section>
 

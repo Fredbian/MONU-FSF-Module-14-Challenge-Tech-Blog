@@ -2,16 +2,165 @@
     box-sizing: border-box;
 }
 
-body,html {
+body {
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    color: rgb(41, 40, 40);
+    color: rgb(58, 37, 7);
+    background-color: rgb(138, 170, 138);
+}
+
+
+header {
+    padding: 10px;
+    background-color: rgb(58, 37, 7);
+}
+
+.app-title {
+    width: 200px;
+    height: 50px;
+    background-color: rgb(138, 170, 138);
+    text-align: center;
+    line-height: 50px;
+}
+
+.home-link {
+    margin-right: 20px;
+}
+
+.dashboard-link {
+    margin-right: 20px;
+}
+
+.edit-link {
+    color: rgb(58, 37, 7);
+    font-size: 24px;
+}
+
+.btn-logout {
+    padding: 0;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: rgb(58, 37, 7);
+    color: rgb(138, 170, 138);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.footer {
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(58, 37, 7);
+    color: white;
+    text-align: center;
+}
+
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+.dashboard {
+    padding-left: 30px;
+}
+
+.blog-info {
+    border: 2px solid rgb(58, 37, 7);
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+.blog-title {
+    background-color: rgb(58, 37, 7);
+    padding: 5px;
+}
+
+.add-new-btn {
+    margin-left: 500px;
 }
 
 a {
     text-decoration: none;
     font-weight: 700;
-    color: rgb(41, 40, 40);
+    color: rgb(138, 170, 138);
+}
+
+.add-blog {
+    margin: 20px 10px;
+    border: 3px solid rgb(58, 37, 7);
+}
+
+.form-header {
+    padding: 0px 5px;
+}
+
+.add-blog-form {
+    padding: 5px;
+}
+
+.add-blog-title {
+    font-weight: 700;
+    color: rgb(58, 37, 7);
+}
+
+.add-blog-body {
+    font-weight: 700;
+    color: rgb(58, 37, 7);
+    margin: 15px 0;
+}
+
+.enter-field {
+ width: 97%;
+ margin: 0 10px;
+}
+
+.btn {
+    width: 200px;
+    height: 40px;
+    font-size: larger;
+}
+
+.comments {
+    margin: 10px;
+}
+
+.blog-info {
+    margin: 10px;
+}
+
+.add-comment-btn{
+    margin: 0 10px;
+}
+
+.edit-blog-form {
+    border: 3px solid rgb(58, 37, 7);
+    margin: 5px;
+    padding: 5px;
+}
+
+.edit-blog-title {
+    font-weight: 700;
+    color: rgb(58, 37, 7);
+}
+
+.edit-blog-body {
+    font-weight: 700;
+    color: rgb(58, 37, 7);
+    margin: 15px 0;
+}
+
+.delete-btn {
+    margin-left: 10px;
 }

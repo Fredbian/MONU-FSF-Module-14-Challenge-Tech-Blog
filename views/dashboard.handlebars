@@ -1,6 +1,7 @@
 {{#if blogs.length}}
 <section>
-  <h2>Dashboard</h2>
+  <h2 class="dashboard">Dashboard</h2>
+  <div class="wrapper">
   <ul class="blog-list">
     {{#each blogs as |blog|}}
     <li>
@@ -9,13 +10,17 @@
     </li>
     {{/each}}
   </ul>
+  </div>
 </section>
 {{else}}
 <section>
+  <div class="wrapper">
   <h3>You have no blogs yet!</h3>
+  </div>
 </section>
 {{/if}}
-
-<button type="submit" class="btn" id="new-blog">Add New Blog</a></button>
+<div class="wrapper">
+<button type="submit" class="btn add-new-btn" id="new-blog">Add New Blog</a></button>
+</div>
 
 <script src="/js/dashboard-addBlog.js"></script>
