@@ -72,11 +72,11 @@ npm start
 
 
 ## Screenshots
-* 
-* 
-*
-*
-*
+* ![Alt text](https://github.com/Fredbian/MONU-FSF-Module-14-Challenge-Tech-Blog/blob/main/public/images/module-14-tech-blog-fred.herokuapp.com_.png)
+* ![Alt text](https://github.com/Fredbian/MONU-FSF-Module-14-Challenge-Tech-Blog/blob/main/public/images/module-14-tech-blog-fred.herokuapp.com_blog_1.png)
+* ![Alt text](https://github.com/Fredbian/MONU-FSF-Module-14-Challenge-Tech-Blog/blob/main/public/images/module-14-tech-blog-fred.herokuapp.com_dashboard.png)
+* ![Alt text](https://github.com/Fredbian/MONU-FSF-Module-14-Challenge-Tech-Blog/blob/main/public/images/module-14-tech-blog-fred.herokuapp.com_dashboard_edit_1.png)
+* ![Alt text](https://github.com/Fredbian/MONU-FSF-Module-14-Challenge-Tech-Blog/blob/main/public/images/module-14-tech-blog-fred.herokuapp.com_login.png)
 
 
 ## URLs
