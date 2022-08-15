@@ -74,7 +74,11 @@ npm start
 ## Screenshots
 * 
 * 
+*
+*
+*
+
 
 ## URLs
-* Github: 
-* Deployed URL: 
+* Github: https://github.com/Fredbian/MONU-FSF-Module-14-Challenge-Tech-Blog 
+* Deployed URL: https://module-14-tech-blog-fred.herokuapp.com/ 
