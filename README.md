@@ -70,6 +70,14 @@ npm run seed
 npm start
 ```
 
+## Technical
+* MySQL
+* JavaScript
+* Express Handlebars
+* ORM
+* HTML
+* CSS
+
 
 ## Screenshots
 * ![Alt text](https://github.com/Fredbian/MONU-FSF-Module-14-Challenge-Tech-Blog/blob/main/public/images/module-14-tech-blog-fred.herokuapp.com_.png)
